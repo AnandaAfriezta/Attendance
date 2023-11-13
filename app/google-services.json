@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "597386733581",
+    "firebase_url": "https://attendance-ad835-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "attendance-ad835",
+    "storage_bucket": "attendance-ad835.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597386733581:android:f37d67d0f0bb98bb160d44",
+        "android_client_info": {
+          "package_name": "com.example.attendance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUPQHiYfDLwJzsJwxnrY9Ss5A_nkcdqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597386733581:android:6eb154f8fecd8904160d44",
+        "android_client_info": {
+          "package_name": "com.example.kehadiran"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUPQHiYfDLwJzsJwxnrY9Ss5A_nkcdqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

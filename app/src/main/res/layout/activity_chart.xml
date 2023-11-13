@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvChartName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Data Kehadiran"
+        android:textSize="30sp"
+        android:fontFamily="@font/ofbold"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
+
+    <com.db.williamchart.view.HorizontalBarChartView
+        android:id="@+id/verticalbarchart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:chart_barsColor="@color/main"
+        app:chart_barsRadius="4dp"
+        app:chart_labelsColor="@color/black"
+        app:chart_labelsSize="12sp"
+        app:chart_spacing="20dp" />
+</LinearLayout>
