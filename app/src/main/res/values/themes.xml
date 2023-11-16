@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Attendance" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.Attendance" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/main</item>
         <item name="colorPrimaryVariant">@color/main</item>
@@ -10,11 +10,17 @@
         <item name="colorSecondaryVariant">@color/main</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/main</item>
         <!-- Customize your theme here. -->
     </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/second</item>
+        <item name="android:color">@color/light</item>
+    </style>
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/light</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/time</item>
+        <item name="postSplashScreenTheme">@style/Theme.Attendance</item>
     </style>
 </resources>

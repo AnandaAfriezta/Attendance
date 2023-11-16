@@ -5,100 +5,176 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DataFragment">
+    tools:context=".fragment.DataFragment">
 
     <TextView
-        android:id="@+id/tvAwardName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="MejaKita Award"
-        android:textSize="30sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/ofbold"
-        android:textColor="@color/black"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"/>
+        android:text="MejaKita award"
+        android:textColor="@color/main"
+        android:textSize="24sp"
+        />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="24dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="12dp">
-
             <Button
-                android:id="@+id/button"
-                android:layout_width="150dp"
-                android:layout_height="45dp"
+                android:id="@+id/buttonDiligent"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/ofsemibold"
-                android:hint="Si Rajin"
+                android:hint="Duta\nRajin"
+                android:textAlignment="center"
                 android:textColorHint="@color/white"
                 android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/resultTextViewDiligent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/resultTextView"
+                android:id="@+id/resultTextViewDiligent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ofsemibold"
                 android:text="Atta"
                 android:textColor="@color/main"
                 android:textSize="26sp"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                app:layout_constraintBottom_toTopOf="@id/tv_desc1"
-                tools:layout_editor_absoluteX="12dp" />
+                android:layout_marginLeft="12dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_descDiligent"
+                app:layout_constraintStart_toEndOf="@id/buttonDiligent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_desc1"
+                android:id="@+id/tv_descDiligent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Melakukan finger sebanyak 37 kali"
-                android:textSize="14sp"
                 android:fontFamily="@font/ofregular"
+                android:text="Melakukan finger sebanyak 37 kali"
                 android:textColor="@color/main"
+                android:textSize="12sp"
+                android:layout_marginLeft="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultTextView"
-                tools:layout_editor_absoluteX="12dp" />
+                app:layout_constraintStart_toEndOf="@id/buttonDiligent"
+                app:layout_constraintTop_toBottomOf="@id/resultTextViewDiligent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="24dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="12dp">
-
             <Button
-                android:id="@+id/button2"
-                android:layout_width="150dp"
-                android:layout_height="45dp"
+                android:id="@+id/buttonLate"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/ofsemibold"
-                android:hint="Hari ini"
+                android:hint="Duta\nTelat"
+                android:textAlignment="center"
                 android:textColorHint="@color/white"
                 android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/resultTextViewLate"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/resultTextView2"
+                android:id="@+id/resultTextViewLate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ofsemibold"
                 android:text="Atta"
                 android:textColor="@color/main"
                 android:textSize="26sp"
-                app:layout_constraintTop_toBottomOf="@+id/button2"
-                tools:layout_editor_absoluteX="12dp" />
+                android:layout_marginLeft="12dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_descLate"
+                app:layout_constraintStart_toEndOf="@id/buttonLate"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_descLate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ofregular"
+                android:text="Melakukan finger sebanyak 37 kali"
+                android:textColor="@color/main"
+                android:textSize="12sp"
+                android:layout_marginLeft="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/buttonLate"
+                app:layout_constraintTop_toBottomOf="@id/resultTextViewLate" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="24dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+            <Button
+                android:id="@+id/buttonAbsent"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/ofsemibold"
+                android:hint="Duta\nAbsen"
+                android:textAlignment="center"
+                android:textColorHint="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/resultTextViewAbsent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/resultTextViewAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ofsemibold"
+                android:text="Aa"
+                android:textColor="@color/main"
+                android:textSize="26sp"
+                android:layout_marginLeft="12dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_descAbsent"
+                app:layout_constraintStart_toEndOf="@id/buttonAbsent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_descAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ofregular"
+                android:text="Qwertyuiop asdfghjkl"
+                android:textColor="@color/main"
+                android:textSize="12sp"
+                android:layout_marginLeft="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/buttonAbsent"
+                app:layout_constraintTop_toBottomOf="@id/resultTextViewAbsent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

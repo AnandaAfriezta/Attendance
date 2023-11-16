@@ -1,10 +1,13 @@
 package com.example.attendance
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import com.db.williamchart.view.BarChartView
 import com.db.williamchart.view.HorizontalBarChartView
+import com.example.attendance.fragment.ReportFragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -13,6 +16,7 @@ import com.google.firebase.database.ValueEventListener
 class ChartActivity : AppCompatActivity() {
     private lateinit var barChart: BarChartView
     private lateinit var horizontabarchart : HorizontalBarChartView
+    lateinit var ivBack: ImageView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +25,11 @@ class ChartActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         horizontabarchart = findViewById(R.id.verticalbarchart)
+        ivBack = findViewById(R.id.iv_back)
+        ivBack.setOnClickListener {
+            val moveIntent = Intent(this@ChartActivity, ReportFragment::class.java)
+            finish()
+        }
         // Mengambil referensi ke tabel kehadiran
         val database = FirebaseDatabase.getInstance()
         val kehadiranRef = database.getReference("1c27wQexbj78D4NFKKGyyJosZGeHWAgbdlJe2MChQ4zY/Sheet1")

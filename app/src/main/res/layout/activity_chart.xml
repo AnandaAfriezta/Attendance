@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
+    android:background="@color/light"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/back"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"/>
 
     <TextView
         android:id="@+id/tvChartName"
@@ -16,12 +25,12 @@
         android:text="Data Kehadiran"
         android:textSize="30sp"
         android:fontFamily="@font/ofbold"
-        android:textColor="@color/black"
+        android:textColor="@color/main"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="34dp"/>
 
     <com.db.williamchart.view.HorizontalBarChartView
         android:id="@+id/verticalbarchart"
@@ -31,7 +40,7 @@
         android:layout_marginBottom="16dp"
         app:chart_barsColor="@color/main"
         app:chart_barsRadius="4dp"
-        app:chart_labelsColor="@color/black"
+        app:chart_labelsColor="@color/main"
         app:chart_labelsSize="12sp"
         app:chart_spacing="20dp" />
 </LinearLayout>
