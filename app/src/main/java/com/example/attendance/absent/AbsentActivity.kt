@@ -11,6 +11,7 @@ import androidx.core.content.res.ResourcesCompat
 import com.example.attendance.R
 import com.example.attendance.fragment.HomeFragment
 import com.google.firebase.database.*
+import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -124,12 +125,28 @@ class AbsentActivity : AppCompatActivity() {
         return (startDate == null || date.isEqual(startDate) || date.isAfter(startDate)) &&
                 (endDate == null || date.isEqual(endDate) || date.isBefore(endDate))
     }
+    private fun isWeekend(date: LocalDate): Boolean {
+        // Function to check if a given date is Saturday or Sunday
+        val dayOfWeek = date.dayOfWeek
+        return (dayOfWeek == DayOfWeek.SATURDAY) || (dayOfWeek == DayOfWeek.SUNDAY)
+    }
 
     private fun calculateTotalDaysInRange(): Int {
-        // Function to calculate the total number of days in the selected date range
+        // Function to calculate the total number of working days in the selected date range
         return if (startDate != null && endDate != null) {
-            val daysBetween = ChronoUnit.DAYS.between(startDate, endDate)
-            daysBetween.toInt() + 1 // Including the end date
+            var totalDays = 0
+            var currentDate = startDate
+
+            if (currentDate != null) {
+                while (!currentDate?.isAfter(endDate)!!) {
+                    if (!currentDate?.let { isWeekend(it) }!!) {
+                        totalDays++
+                    }
+                    currentDate = currentDate.plusDays(1)
+                }
+            }
+
+            totalDays
         } else {
             0
         }
@@ -194,6 +211,19 @@ class AbsentActivity : AppCompatActivity() {
             val row = tableLayout.getChildAt(i) as TableRow
             val jumlahAbsenTextView = row.getChildAt(1) as TextView
             val jumlahAbsen = jumlahAbsenTextView.text.toString().toInt()
+
+            // Ensure startDate and endDate are not null before accessing properties
+            if (startDate != null && endDate != null) {
+                var currentDate = startDate
+
+                while (!currentDate?.isAfter(endDate)!!) {
+                    if (!currentDate?.let { isWeekend(it) }!!) {
+                        totalAbsentCount++
+                    }
+                    currentDate = currentDate.plusDays(1)
+                }
+            }
+
             totalAbsentCount += jumlahAbsen
         }
     }
